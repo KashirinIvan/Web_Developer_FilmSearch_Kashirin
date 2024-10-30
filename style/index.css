@@ -55,56 +55,6 @@ body {
     width: 1920px;
 }
 
-.poster {
-    display: flex;
-    flex-direction: column;
-    width: 358px;
-    height: 500px;
-
-}
-
-.poster-rating {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 52.69px;
-    height: 31.51px;
-    background-color: #3BB33B;
-    border-radius: 2.71px;
-    color: white;
-    position: relative;
-    margin: 13.56px;
-}
-
-.poster-image {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-
-}
-
-.poster-image img {
-    height: 100%;
-    min-width: auto;
-    min-height: auto;
-    position: absolute;
-    display: block;
-}
-
-.poster-title {
-    background-color: black;
-    color: white;
-
-}
-
-.linear-gradient-poster {
-    position: relative;
-    background-image: linear-gradient(to top, rgba(0, 0, 0, 1) 25%, rgba(0, 0, 0, 0) 30%);
-    width: 100%;
-    height: 100%;
-
-}
 
 .basic-image {
     position: relative;

@@ -62,3 +62,31 @@
     font-size: 24px;
     font-style: normal; 
   }
+  .font-main-films-title{
+    font-family: "Inter", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-size: 64px;
+    font-style: normal; 
+  }
+  .font-search-parameters{
+    font-family: "Inter", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-size: 32px;
+    font-style: normal; 
+  }
+  .font-select-option{
+    font-family: "Inter", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-size: 20px;
+    font-style: normal; 
+  }
+  .font-main-films-count-list{
+    font-family: "Inter", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-size: 24px;
+    font-style: normal; 
+  }

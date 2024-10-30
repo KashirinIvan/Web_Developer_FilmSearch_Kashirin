@@ -2,7 +2,7 @@
 <html lang="ru">
 
 <head>
-    <title>Фильмы</title>
+    <title>Поиск фильмов</title>
     <link rel="stylesheet" href="/style/fonts.css">
     <link rel="stylesheet" href="/style/colors.css">
     <link rel="stylesheet" href="/style/common.css">
@@ -28,7 +28,7 @@
             <img class="slider-topic" src="/assets/topic_day.svg" alt="topic_day" />
         </div>
     </header>
-    <main class main>
+    <main>
         <div class="search">
             <div class="search-image">
                 <img src="/assets/imageTop.png" alt="Изображение главного экрана">
@@ -43,7 +43,185 @@
                 </div>
             </div>
         </div>
-       
+        <div class="main">
+            <div class="main-search-parameters">
+                <div class="linear-gradient-list"></div>
+                <div class="search-parameters">
+                    <div class="genre-parameter">
+                        <p class="font-search-parameters">Жанр</p>
+                        <form id="gerdeFilter">
+                            <select id="genreId">
+                                <option class="font-select-option" value="allgenre">Все жанры</option>
+                                <option class="font-select-option" value="action">Боевик</option>
+                                <option class="font-select-option" value="comedy">Комедия</option>
+                                <option class="font-select-option" value="drama">Драма</option>
+                            </select>
+                        </form>
+                    </div>
+                    <div class="rating">
+                        <p class="font-search-parameters">Рейтинг</p>
+                        <form id="ratingFilter">
+                            <select id="ratingId">
+                                <option class="font-select-option" value="more-9">Выбрать рейтинг</option>
+                                <option class="font-select-option" value="more-9">Более 9.0</option>
+                                <option class="font-select-option" value="8-9">8.0-9.0</option>
+                                <option class="font-select-option" value="7-8">7.0-8.0</option>
+                                <option class="font-select-option" value="less-7">Менее 7.0</option>
+                            </select>
+                    </div>
+                    <div class="country">
+                        <p class="font-search-parameters">Страна</p>
+                        <form id="countryFilter">
+                            <select id="countryId">
+                                <option class="font-select-option" value="allcountry">Все страны</option>
+                                <option class="font-select-option" value="countryFirst">Первая страна</option>
+                                <option class="font-select-option" value="countrySecond">Вторая страна</option>
+                                <option class="font-select-option" value="countryThree">Третья страна</option>
+                            </select>
+                    </div>
+                    <div class="year">
+                        <p class="font-search-parameters">Год выпуска</p>
+                        <select id="yearId">
+                            <option class="font-select-option" value="allyear">Все годы</option>
+                            <option class="font-select-option" value="yearFirst">2024</option>
+                            <option class="font-select-option" value="yearSecond">2023</option>
+                            <option class="font-select-option" value="yearThree">2022</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-films">
+                <div class="main-films-title">
+                    <h1 class="font-main-films-title">Фильмы</h1>
+                    <div class="main-films-count-list">
+                        <p class="font-main-films-count-list">1</p>
+                        <p class="font-main-films-count-list">2</p>
+                        <p class="font-main-films-count-list">3</p>
+                        <p class="font-main-films-count-list">4</p>
+                        <p class="font-main-films-count-list">5</p>
+                    </div>
+                </div>
+                <div class="main-film-catalog ">
+                    <div class="poster">
+                        <div class="poster-image">
+                            <img src="/assets/film1.png" alt="Изображение фильма Проклятое королевство" />
+                            <div class="poster-rating">
+                                <p class="font-poster-title">9.8</p>
+                            </div>
+                            <div class="linear-gradient-poster"></div>
+                        </div>
+                        <div class="poster-title">
+                            <p class="font-poster-title">Проклятое королевство</p>
+                        </div>
+                    </div>
+
+                    <div class="poster">
+                        <div class="poster-image">
+                            <img src="/assets/film1.png" alt="Изображение фильма Проклятое королевство" />
+                            <div class="poster-rating">
+                                <p class="font-poster-title">9.8</p>
+                            </div>
+                            <div class="linear-gradient-poster"></div>
+                        </div>
+                        <div class="poster-title">
+                            <p class="font-poster-title">Проклятое королевство</p>
+                        </div>
+                    </div>
+
+                    <div class="poster">
+                        <div class="poster-image">
+                            <img src="/assets/film1.png" alt="Изображение фильма Проклятое королевство" />
+                            <div class="poster-rating">
+                                <p class="font-poster-title">9.8</p>
+                            </div>
+                            <div class="linear-gradient-poster"></div>
+                        </div>
+                        <div class="poster-title">
+                            <p class="font-poster-title">Проклятое королевство</p>
+                        </div>
+                    </div>
+
+                    <div class="poster">
+                        <div class="poster-image">
+                            <img src="/assets/film1.png" alt="Изображение фильма Проклятое королевство" />
+                            <div class="poster-rating">
+                                <p class="font-poster-title">9.8</p>
+                            </div>
+                            <div class="linear-gradient-poster"></div>
+                        </div>
+                        <div class="poster-title">
+                            <p class="font-poster-title">Проклятое королевство</p>
+                        </div>
+                    </div>
+
+                    <div class="poster">
+                        <div class="poster-image">
+                            <img src="/assets/film1.png" alt="Изображение фильма Проклятое королевство" />
+                            <div class="poster-rating">
+                                <p class="font-poster-title">9.8</p>
+                            </div>
+                            <div class="linear-gradient-poster"></div>
+                        </div>
+                        <div class="poster-title">
+                            <p class="font-poster-title">Проклятое королевство</p>
+                        </div>
+                    </div>
+
+                    <div class="poster">
+                        <div class="poster-image">
+                            <img src="/assets/film1.png" alt="Изображение фильма Проклятое королевство" />
+                            <div class="poster-rating">
+                                <p class="font-poster-title">9.8</p>
+                            </div>
+                            <div class="linear-gradient-poster"></div>
+                        </div>
+                        <div class="poster-title">
+                            <p class="font-poster-title">Проклятое королевство</p>
+                        </div>
+                    </div>
+
+                    <div class="poster">
+                        <div class="poster-image">
+                            <img src="/assets/film1.png" alt="Изображение фильма Проклятое королевство" />
+                            <div class="poster-rating">
+                                <p class="font-poster-title">9.8</p>
+                            </div>
+                            <div class="linear-gradient-poster"></div>
+                        </div>
+                        <div class="poster-title">
+                            <p class="font-poster-title">Проклятое королевство</p>
+                        </div>
+                    </div>
+
+                    <div class="poster">
+                        <div class="poster-image">
+                            <img src="/assets/film1.png" alt="Изображение фильма Проклятое королевство" />
+                            <div class="poster-rating">
+                                <p class="font-poster-title">9.8</p>
+                            </div>
+                            <div class="linear-gradient-poster"></div>
+                        </div>
+                        <div class="poster-title">
+                            <p class="font-poster-title">Проклятое королевство</p>
+                        </div>
+                    </div>
+
+                    <div class="poster">
+                        <div class="poster-image">
+                            <img src="/assets/film1.png" alt="Изображение фильма Проклятое королевство" />
+                            <div class="poster-rating">
+                                <p class="font-poster-title">9.8</p>
+                            </div>
+                            <div class="linear-gradient-poster"></div>
+                        </div>
+                        <div class="poster-title">
+                            <p class="font-poster-title">Проклятое королевство</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
     <footer class="footer">
         <p class="font-footer">©️ 2024 Иван Каширин</p>
