@@ -1,0 +1,159 @@
+.header {
+    width: 1920px;
+    height: 111px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.menu a,
+a:hover,
+a:active {
+    text-decoration: none;
+    color: black;
+}
+
+.logo>* {
+    width: 342px;
+    height: 70px;
+    padding: 14px 0 27px 310px;
+}
+
+.menu {
+    display: flex;
+}
+
+.film {
+    padding: 46px 0 41px 187px;
+}
+
+.serial {
+    padding: 46px 0 41px 66px;
+}
+
+.topic {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    padding: 46px 0 41px 313px;
+}
+
+/* футер */
+footer {
+    width: 1920px;
+    height: 212px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.social {
+    display: flex;
+    background-color: black;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 5px;
+}
+
+.social ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+}
+
+.social li {
+    display: contents;
+}
+
+.social img {
+    height: 30px;
+}
+
+/* поиск */
+.search {
+    width: 1920px;
+}
+
+.search-image {
+    position: relative;
+    overflow: hidden;
+    width: 1920px;
+    height: 619px;
+}
+
+.search-image img {
+    position: absolute;
+    display: block;
+    width: 1920px;
+    height: 619px;
+    object-fit: none;
+    object-position: 0 10%;
+    object-fit: cover;
+
+}
+
+.search-form-image {
+    width: 32px;
+    height: 32px;
+    margin: 34px 0 34px 44px;
+}
+
+.search-input {
+    border: none;
+    margin: 35px 0 36px 33px;
+    color: #010101;
+}
+
+input:focus {
+    outline: none;
+}
+
+.search-form-image img {
+    width: auto;
+    height: auto;
+    display: block;
+}
+
+.search-form-buttom {
+    width: 204px;
+    height: 79px;
+    background-color: black;
+    border-radius: 100px;
+    margin: 10px 13px 11px 855px;
+    color: white;
+}
+
+.form-search {
+    width: 1492px;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.search-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 1492px;
+    height: 100px;
+    margin: 254px 0 0 214px;
+    border-radius: 100px;
+    background-color: white;
+    position: relative;
+}
+
+.linear-gradient-search {
+    position: absolute;
+    background-image: linear-gradient(to right, rgba(128, 0, 255, 0.5), rgba(255, 92, 0, 0.5));
+    width: 1920px;
+    height: 619px;
+}

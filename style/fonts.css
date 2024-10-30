@@ -1,0 +1,64 @@
+.font-menu {
+    font-family: "Inter", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-size: 20px;
+    font-style: normal;
+  }
+  .font-top {
+    font-family: "Inter", serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-size: 80px;
+    font-style: normal;
+
+  }
+  .font-footer{
+    font-family: "Inter", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-size: 26px;
+    font-style: normal;
+  }
+  .font-poster-title{
+    font-family: "Inter", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-size: 29.52px;
+    font-style: normal;
+  }
+  .font-poster-rating{
+    font-family: "Inter", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-size: 20.5px;
+    font-style: normal;
+  }
+  .font-search-buttom {
+    font-family: "Inter", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-size: 24px;
+    font-style: normal;
+  }
+  .font-search-input {
+    font-family: "Inter", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-size: 24px;
+    font-style: normal;
+  }
+  .font-basic-title{
+    font-family: "Inter", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-size: 48px;
+    font-style: normal; 
+  }  
+  .font-basic-text{
+    font-family: "Inter", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-size: 24px;
+    font-style: normal; 
+  }

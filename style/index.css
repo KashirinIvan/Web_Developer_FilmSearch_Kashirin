@@ -1,0 +1,146 @@
+header {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.imageTop {
+    display: flex;
+    flex-direction: row;
+    width: 1920px;
+}
+
+.imageTop-text {
+    background-color: black;
+    color: white;
+    width: 896px;
+    height: 620px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.imageTop-image {
+    position: relative;
+    overflow: hidden;
+    width: 1024px;
+    height: 620px;
+}
+
+.imageTop-image img {
+    position: absolute;
+    width: 1024px;
+    height: 620px;
+    object-fit: cover;
+    display: block;
+}
+
+.linear-gradient {
+    position: relative;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 1) 5%, rgba(0, 0, 0, 0)50%);
+    width: 100%;
+    height: 100%;
+}
+
+.poster-catalog {
+    margin: 103px 0 103px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 1920px;
+}
+
+.poster {
+    display: flex;
+    flex-direction: column;
+    width: 358px;
+    height: 500px;
+
+}
+
+.poster-rating {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 52.69px;
+    height: 31.51px;
+    background-color: #3BB33B;
+    border-radius: 2.71px;
+    color: white;
+    position: relative;
+    margin: 13.56px;
+}
+
+.poster-image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+}
+
+.poster-image img {
+    height: 100%;
+    min-width: auto;
+    min-height: auto;
+    position: absolute;
+    display: block;
+}
+
+.poster-title {
+    background-color: black;
+    color: white;
+
+}
+
+.linear-gradient-poster {
+    position: relative;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 1) 25%, rgba(0, 0, 0, 0) 30%);
+    width: 100%;
+    height: 100%;
+
+}
+
+.basic-image {
+    position: relative;
+    overflow: hidden;
+    width: 1920px;
+    height: 620px;
+}
+
+.basic-image img {
+    position: absolute;
+    display: block;
+    width: 1920px;
+    height: 620px;
+    object-fit: none;
+    object-position: 0 65%;
+    object-fit: cover;
+
+}
+.basic-title{
+    position: relative;
+    color: white;
+    width: 699px;
+    height: 130px;
+    margin: 151px 0 0 323px;
+}
+.basic-text{
+    position: relative;
+    color: white;
+    width: 920px;
+    height: 160px;
+    margin: 29px 0 0 323px;
+}
+.linear-gradient-basic {
+    position: absolute;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5) , rgba(0, 0, 0, 0.5) );
+    width: 100%;
+    height: 100%;
+
+}
