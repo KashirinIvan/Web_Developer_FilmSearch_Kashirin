@@ -2,6 +2,8 @@
 <html lang="ru">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
     <title>Поиск фильмов</title>
     <link rel="stylesheet" href="/style/fonts.css">
     <link rel="stylesheet" href="/style/colors.css">
@@ -14,19 +16,26 @@
 
 <body>
     <header class="header">
-        <div class="logo">
-            <img src="/assets/logo.png" alt="Логотип" />
-        </div>
-        <div>
-            <nav class="menu">
-                <a href="/movie_list/movie_list.html" class="film font-menu">Фильмы</a>
-                <a href="/series_list/series_list.html" class="serial font-menu">Сериалы</a>
-            </nav>
-        </div>
-        <div class="topic">
-            <div class="font-menu">Темная тема</div>
-            <img class="slider-topic" src="/assets/topic_day.svg" alt="topic_day" />
-        </div>
+        <nav>
+            <div class="logo">
+                <img src="/assets/logo.png" alt="Логотип" />
+            </div>
+            <div id="menu-container-full">
+                <input type="checkbox" id="menu-hamburger">
+                <label for="menu-hamburger"></label>
+                <div id="menu-container">
+                    <ul>
+                        <li><a href="/movie_list/movie_list.html" class="font-menu">Фильмы</a>
+                        <li><a href="/series_list/series_list.html" class="font-menu">Сериалы</a>
+                        <li>
+                            <div class="topic">
+                                <div class="font-menu">Темная тема</div>
+                                <img class="slider-topic" src="/assets/topic_day.svg" alt="topic_day" />
+                            </div>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </header>
     <main>
         <div class="search">
@@ -103,7 +112,10 @@
                     </div>
                 </div>
                 <div class="main-film-catalog ">
-                    <div class="poster">
+                    <div class="left">
+                        <img src="/assets/left.svg" alt="кнопка влево" />
+                    </div>
+                    <div class="poster poster-open">
                         <div class="poster-image">
                             <img src="/assets/film1.png" alt="Изображение фильма Проклятое королевство" />
                             <div class="poster-rating">
@@ -116,7 +128,7 @@
                         </div>
                     </div>
 
-                    <div class="poster">
+                    <div class="poster poster-close">
                         <div class="poster-image">
                             <img src="/assets/film1.png" alt="Изображение фильма Проклятое королевство" />
                             <div class="poster-rating">
@@ -129,7 +141,7 @@
                         </div>
                     </div>
 
-                    <div class="poster">
+                    <div class="poster poster-close">
                         <div class="poster-image">
                             <img src="/assets/film1.png" alt="Изображение фильма Проклятое королевство" />
                             <div class="poster-rating">
@@ -142,7 +154,7 @@
                         </div>
                     </div>
 
-                    <div class="poster">
+                    <div class="poster poster-close">
                         <div class="poster-image">
                             <img src="/assets/film1.png" alt="Изображение фильма Проклятое королевство" />
                             <div class="poster-rating">
@@ -155,7 +167,7 @@
                         </div>
                     </div>
 
-                    <div class="poster">
+                    <div class="poster poster-close">
                         <div class="poster-image">
                             <img src="/assets/film1.png" alt="Изображение фильма Проклятое королевство" />
                             <div class="poster-rating">
@@ -168,7 +180,7 @@
                         </div>
                     </div>
 
-                    <div class="poster">
+                    <div class="poster poster-close">
                         <div class="poster-image">
                             <img src="/assets/film1.png" alt="Изображение фильма Проклятое королевство" />
                             <div class="poster-rating">
@@ -181,7 +193,7 @@
                         </div>
                     </div>
 
-                    <div class="poster">
+                    <div class="poster poster-close">
                         <div class="poster-image">
                             <img src="/assets/film1.png" alt="Изображение фильма Проклятое королевство" />
                             <div class="poster-rating">
@@ -194,7 +206,7 @@
                         </div>
                     </div>
 
-                    <div class="poster">
+                    <div class="poster poster-close">
                         <div class="poster-image">
                             <img src="/assets/film1.png" alt="Изображение фильма Проклятое королевство" />
                             <div class="poster-rating">
@@ -207,7 +219,7 @@
                         </div>
                     </div>
 
-                    <div class="poster">
+                    <div class="poster poster-close">
                         <div class="poster-image">
                             <img src="/assets/film1.png" alt="Изображение фильма Проклятое королевство" />
                             <div class="poster-rating">
@@ -218,6 +230,10 @@
                         <div class="poster-title">
                             <p class="font-poster-title">Проклятое королевство</p>
                         </div>
+                    </div>
+
+                    <div class="right">
+                        <img src="/assets/right.svg" alt="кнопка вправо" />
                     </div>
                 </div>
             </div>

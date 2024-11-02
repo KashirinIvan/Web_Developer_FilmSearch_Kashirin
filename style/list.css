@@ -1,52 +1,11 @@
 .main {
-    width: 1920px;
+    width: 100vw;
     display: flex;
     flex-direction: row;
 }
 
-.main-films {
-    width: 1119px;
-    margin: 0 0 0 25px;
-
-}
-
-.main-films-count-list {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 175px;
-    height: 29px;
-
-}
-
-.main-search-parameters {
-    display: flex;
-    flex-direction: column;
-    width: 478px;
-    height: 2058px;
-}
-
-.main-films-title {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin: 111px 0 93px 0;
-}
-
-.main-film-catalog {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    row-gap: 50px;
-}
-
-.linear-gradient-list {
-    position: absolute;
-    background-image: linear-gradient(to left, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0)2%);
-    width: 478px;
-    height: 2058px;
+select {
+    background-color: #F2F2F2;
 }
 
 .search-parameters {
@@ -54,34 +13,162 @@
     flex-direction: column;
 }
 
-.genre-parameter {
-    width: 300px;
-    height: 132px;
-    margin: 112px 48px 0 90px;
+.main-search-parameters {
+    display: flex;
+    flex-direction: column;
 }
 
-.rating {
-    width: 300px;
-    height: 132px;
-    margin: 50px 48px 0 90px;
+@media (max-width: 360px) {
+    .main {
+        flex-direction: column;
+    }
+
+    .linear-gradient-list {
+        display: none;
+    }
+
+    .poster-close {
+        display: none;
+    }
+
+    .genre-parameter {
+        width: 83.33vw;
+        height: 15.26vh;
+        margin: 5.78vh 0 0 8.06vw;
+    }
+
+    .rating {
+        width: 83.33vw;
+        height: 15.26vh;
+        margin: 5.78vh 0 0 8.06vw;
+    }
+
+    .country {
+        width: 83.33vw;
+        height: 15.26vh;
+        margin: 5.78vh 0 0 8.06vw;
+    }
+
+    .year {
+        width: 83.33vw;
+        height: 15.26vh;
+        margin: 5.78vh 0 0 8.06vw;
+    }
+
+    select {
+        width: 83.33vw;
+        height: 7.86vh;
+        border-radius: 0.93;
+        background-color: #F2F2F2;
+    }
+
+    .main-search-parameters {
+        width: 100vw;
+    }
+
+    .main-films {
+        width: 100vw;
+
+    }
+
+    .main-films-count-list {
+        display: none;
+    }
+
+    .main-film-catalog {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        row-gap: 2.6vw
+    }
+    .main-films-title {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin: 10.28vh 0 8.61vh 0;
+    }
 }
 
-.country {
-    width: 300px;
-    height: 132px;
-    margin: 50px 48px 0 90px;
-}
+@media (min-width: 361px) {
+    .main {
+        flex-direction: row;
+    }
 
-.year {
-    width: 300px;
-    height: 132px;
-    margin: 50px 48px 0 90px;
-}
+    .linear-gradient-list {
+        position: absolute;
+        background-image: linear-gradient(to left, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0)2%);
+        width: 24.9vw;
+        height: 190.56vh;
+    }
 
-select {
-    width: 300px;
-    height: 68px;
-    border-radius: 10px;
-    background-color: #F2F2F2;
-    ;
+    .genre-parameter {
+        width: 15.63vw;
+        height: 12.22vh;
+        margin: 10.37vh 2.5vw 0 4.69vw;
+    }
+
+    .rating {
+        width: 15.63vw;
+        height: 12.22vh;
+        margin: 4.63vh 2.5vw 0 4.69vw;
+    }
+
+    .country {
+        width: 15.63vw;
+        height: 12.22vh;
+        margin: 4.63vh 2.5vw 0 4.69vw;
+    }
+
+    .year {
+        width: 15.63vw;
+        height: 12.22vh;
+        margin: 4.63vh 2.5vw 0 4.69vw;
+    }
+
+    select {
+        width: 15.63vw;
+        height: 6.29vh;
+        border-radius: 0.93;
+    }
+
+    .main-search-parameters {
+        width: 24.9vw;
+        height: 190.56vh;
+    }
+
+    .main-films {
+        width: 58.28vw;
+        margin: 0 0 0 1.3vw;
+
+    }
+
+    .main-films-count-list {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 9.11vw;
+        height: 2.69vh;
+    }
+
+    .main-film-catalog {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        row-gap: 2.6vw
+    }
+
+    .main-films-title {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin: 10.28vh 0 8.61vh 0;
+    }
+    .left, .right{
+        display: none;
+    }
+
 }
