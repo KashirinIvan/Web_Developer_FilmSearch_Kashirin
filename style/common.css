@@ -1,3 +1,4 @@
+
 header {
     margin: 0;
     padding: 0;
@@ -7,6 +8,14 @@ body {
     margin: 0;
     padding: 0;
 }
+.themeToggle{
+    border: none;
+    width: 2.92vw;
+    height: 2.87vh;
+    border-radius: 1.85vh;
+    padding: 0;
+}
+
 /* seartch*/
 .search {
     width: 100vw;
@@ -33,8 +42,9 @@ input:focus {
 }
 
 .search-form-buttom {
-    background-color: black;
+    background-color: #020202;
     color: white;
+    border: none;
 }
 
 .form-search {
@@ -64,7 +74,9 @@ input:focus {
     display: flex;
     flex-direction: column;
 }
-
+.poster-link-movie{
+    text-decoration: none;
+}
 .poster-rating {
     display: flex;
     justify-content: center;
@@ -130,6 +142,7 @@ input:focus {
     height: 10.28vh;
     margin: 0;
     padding: 0;
+    position: absolute;
     background-color: white;
     box-sizing: border-box;
     position: fixed;
@@ -275,7 +288,7 @@ nav a {
     }
 
     #menu-container {
-        background-color: white;
+        
         position: absolute;
         top: 7vh;
         right: 0;

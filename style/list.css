@@ -33,67 +33,65 @@ select {
 
     .genre-parameter {
         width: 83.33vw;
-        height: 15.26vh;
-        margin: 5.78vh 0 0 8.06vw;
+        height: 3.35vh;
+        margin: 5.78vh 0 0 14.4vw;
     }
 
     .rating {
         width: 83.33vw;
-        height: 15.26vh;
-        margin: 5.78vh 0 0 8.06vw;
+        height: 3.35vh;
+        margin: 17.69vh 0 0 14.4vw;
     }
 
     .country {
         width: 83.33vw;
-        height: 15.26vh;
-        margin: 5.78vh 0 0 8.06vw;
+        height: 3.35vh;
+        margin: 17.69vh 0 0 14.4vw;
     }
 
     .year {
         width: 83.33vw;
-        height: 15.26vh;
-        margin: 5.78vh 0 0 8.06vw;
+        height: 3.35vh;
+        margin: 17.69vh 0 0 14.4vw;
     }
 
     select {
         width: 83.33vw;
         height: 7.86vh;
         border-radius: 0.93;
-        background-color: #F2F2F2;
+        margin: 4.05vh 0 0 -6.39vw;
     }
 
     .main-search-parameters {
         width: 100vw;
     }
 
-    .main-films {
-        width: 100vw;
-
-    }
-
-    .main-films-count-list {
+     .main-films-count-list {
         display: none;
     }
 
     .main-film-catalog {
+        width: 100vw;
+        margin: 23.93vh 0 0 0;
         display: flex;
         flex-direction: row;
         align-items: center;
-        justify-content: space-between;
-        row-gap: 2.6vw
+        justify-content: space-around;
     }
     .main-films-title {
+        width: 41.94vw;
+        height: 4.97vh;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        margin: 10.28vh 0 8.61vh 0;
+        margin: 4.16vh 0 0 8.06vw;
     }
 }
 
 @media (min-width: 361px) {
     .main {
-        flex-direction: row;
+        flex-direction: column;
     }
 
     .linear-gradient-list {
@@ -135,12 +133,14 @@ select {
 
     .main-search-parameters {
         width: 24.9vw;
-        height: 190.56vh;
+        height: 188.7vh;
+        margin: -27vh 0 0 1.3vw;
     }
+    
 
     .main-films {
-        width: 58.28vw;
-        margin: 0 0 0 1.3vw;
+        display: flex;
+        justify-content: row;
 
     }
 
@@ -157,15 +157,18 @@ select {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-        row-gap: 2.6vw
+         width: 58.02vw;
+        margin: 0 0 0 1.3vw;
     }
 
     .main-films-title {
+        width: 58.02vw;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        margin: 10.28vh 0 8.61vh 0;
+        margin: 10.28vh 0 8.61vh 27.26vw;
+
     }
     .left, .right{
         display: none;

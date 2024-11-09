@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
-    <title>Фильм</title>
+    <title>Поиск фильмов</title>
     <link rel="stylesheet" href="/style/fonts.css">
     <link rel="stylesheet" href="/style/colors.css">
     <link rel="stylesheet" href="/style/common.css">
@@ -12,6 +12,9 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
     </style>
+    <script src="/script/jquery-3.7.1.js"></script>
+    <script src="/script/common.js"></script>
+    <script src="/script/script_movie.js"></script>
 </head>
 
 <body>
@@ -29,8 +32,9 @@
                         <li><a href="/series_list/series_list.html" class="font-menu">Сериалы</a>
                         <li>
                             <div class="topic">
-                                <div class="font-menu">Темная тема</div>
-                                <img class="slider-topic" src="/assets/topic_day.svg" alt="topic_day" />
+                                <div class="font-menu titleThemeToggle">Темная тема</div>
+                                <button class="themeToggle"><img class="slider-topic" src="/assets/topic_day.svg"
+                                        alt="topic_day" /></button>
                             </div>
                     </ul>
                 </div>
@@ -53,73 +57,76 @@
             </div>
         </div>
         <div class="movie">
-            <div class="poster">
-                <div class="poster-image">
-                    <img src="/assets/film1.png" alt="Изображение фильма Проклятое королевство" />
-                    <div class="poster-rating">
-                        <p class="font-poster-title">9.8</p>
-                    </div>
-                    <div class="linear-gradient-poster"></div>
-                </div>
-                <div class="poster-title">
-                </div>
+            <div class="movie-title">
+                <h1 class="font-movie-title">Проклятое<br />королевство</h1>
             </div>
-            <div class="movie-info">
-                <div class="movie-title">
-                    <h1 class="font-movie-title">Проклятое<br />королевство</h1>
-                </div>
-                <div class="movie-about-film">
-                    <p class="font-movie-about-film">О фильме</p>
-                </div>
-                <div class="genre font-movir-info">
-                    <div class="genre-title">Жанр</div>
-                    <div class="genre-info">Фэнтези, драма</div>
-                </div>
-                <div class="country font-movir-info">
-                    <div class="country-title">Страна производства</div>
-                    <div class="country-info">Великобритания</div>
-                </div>
-                <div class="actor font-movir-info">
-                    <div class="actor-title">Актёры</div>
-                    <div class="actor-info">Альберто Маркез, Наталия Ковальски, Леонардо Родригес, Изабелла Хартман
+            <div class="info">
+                <div class="poster">
+                    <div class="poster-image">
+                        <img src="/assets/film1.png" alt="Изображение фильма Проклятое королевство" />
+                        <div class="poster-rating">
+                            <p class="font-poster-title">9.8</p>
+                        </div>
+                        <div class="linear-gradient-poster"></div>
+                    </div>
+                    <div class="poster-title">
                     </div>
                 </div>
-                <div class="directors font-movir-info">
-                    <div class="directors-title">Режиссёры</div>
-                    <div class="directors-info">Элиас Торнбридж</div>
-                </div>
-                <div class="release font-movir-info">
-                    <div class="release-title">Дата релиза</div>
-                    <div class="release-info">23 апреля 2023 года</div>
-                </div>
-                <div class="age font-movir-info">
-                    <div class="age-title">Возрастное ограничение</div>
-                    <div class="age-info">16+</div>
+                <div class="movie-info">
+                    <div class="movie-about-film">
+                        <p class="font-movie-about-film">О фильме</p>
+                    </div>
+                    <div class="genre">
+                        <div class="genre-title font-movie-info-title">Жанр</div>
+                        <div class="genre-info font-movie-info">Фэнтези, драма</div>
+                    </div>
+                    <div class="country">
+                        <div class="country-title font-movie-info-title">Страна производства</div>
+                        <div class="country-info font-movie-info">Великобритания</div>
+                    </div>
+                    <div class="actor">
+                        <div class="actor-title font-movie-info-title">Актёры</div>
+                        <div class="actor-info font-movie-info">Альберто Маркез, Наталия Ковальски, Леонардо Родригес,
+                            Изабелла Хартман
+                        </div>
+                    </div>
+                    <div class="directors">
+                        <div class="directors-title font-movie-info-title">Режиссёры</div>
+                        <div class="directors-info font-movie-info">Элиас Торнбридж</div>
+                    </div>
+                    <div class="release">
+                        <div class="release-title font-movie-info-title">Дата релиза</div>
+                        <div class="release-info font-movie-info">23 апреля 2023 года</div>
+                    </div>
+                    <div class="age">
+                        <div class="age-title font-movie-info-title">Возрастное ограничение</div>
+                        <div class="age-info font-movie-info">16+</div>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="trailer">
             <h1 class="font-trailer-title">Трейлер</h1>
             <video controls>
-                <iframe  src="https://www.youtube.com/watch?v=VcepKg4eSA4"></iframe>
+                <iframe src="https://www.youtube.com/watch?v=VcepKg4eSA4"></iframe>
             </video>
         </div>
         <div class="stills-film">
             <h1 class="font-stills-film-title">Кадры из фильма</h1>
             <div class="stills">
                 <div class="stills-left">
-                    <img src="/assets/left.svg" alt="кнопка влево" />
+                    <img src="/assets/left_day.svg" alt="кнопка влево" />
                 </div>
                 <div class="stills-calage">
-                    <div class="stills-image">
+                    <div class="stills-image stills-first">
                         <img src="/assets/movieImage1.png" alt="название фильма 1" />
                     </div>
-                    <div class="stills-image">
+                    <div class="stills-image stills-second">
                         <img src="/assets/movieImage2.png" alt="название фильма 2" />
                     </div>
                 </div>
                 <div class="stills-right">
-                    <img src="/assets/right.svg" alt="кнопка вправо" />
+                    <img src="/assets/right_day.svg" alt="кнопка вправо" />
                 </div>
             </div>
         </div>
@@ -183,10 +190,10 @@
         <p class="font-footer">©️ 2024 Иван Каширин</p>
         <div class="social">
             <ul class="links">
-                <li><a href="https://t.me/"><img src="/assets/tg.svg" alt="Telegram" /></a></li>
-                <li><a href="https://vk.com/"><img src="/assets/vk.svg" alt="VK" /></a></li>
-                <li><a href="https://dzen.ru/"><img src="/assets/dzen.svg" alt="Дзен" /></a></li>
-                <li><a href="https://youtu.be/"><img src="/assets/youtube.svg" alt="YouTube" /></a></li>
+                <li class="social-telegram"><a href="https://t.me/"><img src="/assets/tg.svg" alt="Telegram" /></a></li>
+                <li class="social-vk"><a href="https://vk.com/"><img src="/assets/vk.svg" alt="VK" /></a></li>
+                <li class="social-dzen"><a href="https://dzen.ru/"><img src="/assets/dzen.svg" alt="Дзен" /></a></li>
+                <li class="social-youtube"><a href="https://youtu.be/"><img src="/assets/youtube.svg" alt="YouTube" /></a></li>
             </ul>
         </div>
     </footer>

@@ -12,6 +12,9 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
     </style>
+    <script src="/script/jquery-3.7.1.js"></script>
+    <script type="module" src="/script/common.js"></script>
+    <script type="module" src="/script/script_movie_list.js"></script>
 </head>
 
 <body>
@@ -29,8 +32,9 @@
                         <li><a href="/series_list/series_list.html" class="font-menu">Сериалы</a>
                         <li>
                             <div class="topic">
-                                <div class="font-menu">Темная тема</div>
-                                <img class="slider-topic" src="/assets/topic_day.svg" alt="topic_day" />
+                                <div class="font-menu titleThemeToggle">Темная тема</div>
+                                <button class="themeToggle"><img class="slider-topic" src="/assets/topic_day.svg"
+                                        alt="topic_day" /></button>
                             </div>
                     </ul>
                 </div>
@@ -53,67 +57,71 @@
             </div>
         </div>
         <div class="main">
-            <div class="main-search-parameters">
-                <div class="linear-gradient-list"></div>
-                <div class="search-parameters">
-                    <div class="genre-parameter">
-                        <p class="font-search-parameters">Жанр</p>
-                        <form id="gerdeFilter">
-                            <select id="genreId">
-                                <option class="font-select-option" value="allgenre">Все жанры</option>
-                                <option class="font-select-option" value="action">Боевик</option>
-                                <option class="font-select-option" value="comedy">Комедия</option>
-                                <option class="font-select-option" value="drama">Драма</option>
-                            </select>
-                        </form>
-                    </div>
-                    <div class="rating">
-                        <p class="font-search-parameters">Рейтинг</p>
-                        <form id="ratingFilter">
-                            <select id="ratingId">
-                                <option class="font-select-option" value="more-9">Выбрать рейтинг</option>
-                                <option class="font-select-option" value="more-9">Более 9.0</option>
-                                <option class="font-select-option" value="8-9">8.0-9.0</option>
-                                <option class="font-select-option" value="7-8">7.0-8.0</option>
-                                <option class="font-select-option" value="less-7">Менее 7.0</option>
-                            </select>
-                    </div>
-                    <div class="country">
-                        <p class="font-search-parameters">Страна</p>
-                        <form id="countryFilter">
-                            <select id="countryId">
-                                <option class="font-select-option" value="allcountry">Все страны</option>
-                                <option class="font-select-option" value="countryFirst">Первая страна</option>
-                                <option class="font-select-option" value="countrySecond">Вторая страна</option>
-                                <option class="font-select-option" value="countryThree">Третья страна</option>
-                            </select>
-                    </div>
-                    <div class="year">
-                        <p class="font-search-parameters">Год выпуска</p>
-                        <select id="yearId">
-                            <option class="font-select-option" value="allyear">Все годы</option>
-                            <option class="font-select-option" value="yearFirst">2024</option>
-                            <option class="font-select-option" value="yearSecond">2023</option>
-                            <option class="font-select-option" value="yearThree">2022</option>
-                        </select>
-                    </div>
+            <div class="main-films-title">
+                <h1 class="font-main-films-title">Фильмы</h1>
+                <div class="main-films-count-list">
+                    <p class="font-main-films-count-list">1</p>
+                    <p class="font-main-films-count-list">2</p>
+                    <p class="font-main-films-count-list">3</p>
+                    <p class="font-main-films-count-list">4</p>
+                    <p class="font-main-films-count-list">5</p>
                 </div>
             </div>
-
             <div class="main-films">
-                <div class="main-films-title">
-                    <h1 class="font-main-films-title">Фильмы</h1>
-                    <div class="main-films-count-list">
-                        <p class="font-main-films-count-list">1</p>
-                        <p class="font-main-films-count-list">2</p>
-                        <p class="font-main-films-count-list">3</p>
-                        <p class="font-main-films-count-list">4</p>
-                        <p class="font-main-films-count-list">5</p>
+                <div class="main-search-parameters">
+                    <div class="linear-gradient-list"></div>
+                    <div class="search-parameters">
+                        <div class="genre-parameter">
+                            <p class="font-search-parameters">Жанр</p>
+                            <form id="gerdeFilter">
+                                <select id="genreId" name="genre">
+                                    <option class="font-select-option" value="allgenre" selected disabled>Все жанры
+                                    </option>
+                                    <option class="font-select-option" value="action">Боевик</option>
+                                    <option class="font-select-option" value="comedy">Комедия</option>
+                                    <option class="font-select-option" value="drama">Драма</option>
+                                </select>
+                            </form>
+                        </div>
+                        <div class="rating">
+                            <p class="font-search-parameters">Рейтинг</p>
+                            <form id="ratingFilter">
+                                <select id="ratingId" name="rating">
+                                    <option class="font-select-option" value="more-9" selected disabled>Выбрать рейтинг
+                                    </option>
+                                    <option class="font-select-option" value="more-9">Более 9.0</option>
+                                    <option class="font-select-option" value="8-9">8.0-9.0</option>
+                                    <option class="font-select-option" value="7-8">7.0-8.0</option>
+                                    <option class="font-select-option" value="less-7">Менее 7.0</option>
+                                </select>
+                        </div>
+                        <div class="country">
+                            <p class="font-search-parameters">Страна</p>
+                            <form id="countryFilter">
+                                <select id="countryId" name="country">
+                                    <option class="font-select-option" value="allcountry" selected disabled>Все страны
+                                    </option>
+                                    <option class="font-select-option" value="countryFirst">Первая страна</option>
+                                    <option class="font-select-option" value="countrySecond">Вторая страна</option>
+                                    <option class="font-select-option" value="countryThree">Третья страна</option>
+                                </select>
+                        </div>
+                        <div class="year">
+                            <p class="font-search-parameters">Год выпуска</p>
+                            <select id="yearId" name="year">
+                                <option class="font-select-option" value="allyear" selected disabled>Все годы</option>
+                                <option class="font-select-option" value="yearFirst">2024</option>
+                                <option class="font-select-option" value="yearSecond">2023</option>
+                                <option class="font-select-option" value="yearThree">2022</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
+
+
                 <div class="main-film-catalog ">
                     <div class="left">
-                        <img src="/assets/left.svg" alt="кнопка влево" />
+                        <img src="/assets/left_day.svg" alt="кнопка влево" />
                     </div>
                     <div class="poster poster-open">
                         <div class="poster-image">
@@ -233,7 +241,7 @@
                     </div>
 
                     <div class="right">
-                        <img src="/assets/right.svg" alt="кнопка вправо" />
+                        <img src="/assets/right_day_activ.svg" alt="кнопка вправо" />
                     </div>
                 </div>
             </div>
@@ -243,10 +251,10 @@
         <p class="font-footer">©️ 2024 Иван Каширин</p>
         <div class="social">
             <ul class="links">
-                <li><a href="https://t.me/"><img src="/assets/tg.svg" alt="Telegram" /></a></li>
-                <li><a href="https://vk.com/"><img src="/assets/vk.svg" alt="VK" /></a></li>
-                <li><a href="https://dzen.ru/"><img src="/assets/dzen.svg" alt="Дзен" /></a></li>
-                <li><a href="https://youtu.be/"><img src="/assets/youtube.svg" alt="YouTube" /></a></li>
+                <li class="social-telegram"><a href="https://t.me/"><img src="/assets/tg.svg" alt="Telegram" /></a></li>
+                <li class="social-vk"><a href="https://vk.com/"><img src="/assets/vk.svg" alt="VK" /></a></li>
+                <li class="social-dzen"><a href="https://dzen.ru/"><img src="/assets/dzen.svg" alt="Дзен" /></a></li>
+                <li class="social-youtube"><a href="https://youtu.be/"><img src="/assets/youtube.svg" alt="YouTube" /></a></li>
             </ul>
         </div>
     </footer>

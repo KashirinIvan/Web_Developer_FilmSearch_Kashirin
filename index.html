@@ -12,6 +12,10 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
     </style>
+    <script src="/script/jquery-3.7.1.js"></script>
+    <script src="/script/common.js"></script>
+    <script src="/script/script_index.js"></script>
+
 </head>
 
 <body>
@@ -29,8 +33,9 @@
                         <li><a href="/series_list/series_list.html" class="font-menu">Сериалы</a>
                         <li>
                             <div class="topic">
-                                <div class="font-menu">Темная тема</div>
-                                <img class="slider-topic" src="/assets/topic_day.svg" alt="topic_day" />
+                                <div class="font-menu titleThemeToggle">Темная тема</div>
+                                <button class="themeToggle"><img class="slider-topic" src="/assets/topic_day.svg"
+                                        alt="topic_day" /></button>
                             </div>
                     </ul>
                 </div>
@@ -50,52 +55,58 @@
 
         <div class="poster-catalog">
             <div class="left">
-                <img src="/assets/left.svg" alt="кнопка влево" />
+                <button class="button-left"><img src="/assets/left_day.svg" alt="кнопка влево" /></button>
             </div>
-            <div class="poster-first">
-                <div class="poster">
-                    <div class="poster-image">
-                        <img src="/assets/film1.png" alt="Изображение фильма Проклятое королевство" />
-                        <div class="poster-rating">
-                            <p class="font-poster-title">9.8</p>
+            <a href="/movie/movie.html" class="poster-link-movie">
+                <div class="poster-first">
+                    <div class="poster">
+                        <div class="poster-image poster-image-first">
+                            <img src="/assets/film1.png" alt="Изображение фильма Проклятое королевство" />
+                            <div class="poster-rating">
+                                <p class="font-poster-title poster-rating-first">9.8</p>
+                            </div>
+                            <div class="linear-gradient-poster"></div>
                         </div>
-                        <div class="linear-gradient-poster"></div>
-                    </div>
-                    <div class="poster-title">
-                        <p class="font-poster-title">Проклятое королевство</p>
+                        <div class="poster-title">
+                            <p class="font-poster-title poster-title-first">Проклятое королевство</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="poster-second">
-                <div class="poster">
-                    <div class="poster-image">
-                        <img src="/assets/film2.png" alt="Изображение фильма Проклятое королевство" />
-                        <div class="poster-rating">
-                            <p class="font-poster-title">9.7</p>
+            </a>
+            <a href="/movie/movie.html" class="poster-link-movie">
+                <div class="poster-second">
+                    <div class="poster">
+                        <div class="poster-image poster-image-second">
+                            <img src="/assets/film2.png" alt="Изображение фильма Проклятое королевство" />
+                            <div class="poster-rating">
+                                <p class="font-poster-title poster-rating-second">9.7</p>
+                            </div>
+                            <div class="linear-gradient-poster"></div>
                         </div>
-                        <div class="linear-gradient-poster"></div>
-                    </div>
-                    <div class="poster-title">
-                        <p class="font-poster-title">Код красный</p>
+                        <div class="poster-title">
+                            <p class="font-poster-title poster-title-second">Код красный</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="poster-third">
-                <div class="poster">
-                    <div class="poster-image">
-                        <img src="/assets/film3.png" alt="Изображение фильма Проклятое королевство" />
-                        <div class="poster-rating">
-                            <p class="font-poster-title">8.7</p>
+            </a>
+            <a href="/movie/movie.html" class="poster-link-movie">
+                <div class="poster-third">
+                    <div class="poster">
+                        <div class="poster-image poster-image-third">
+                            <img src="/assets/film3.png" alt="Изображение фильма Проклятое королевство" />
+                            <div class="poster-rating">
+                                <p class="font-poster-title poster-rating-third">8.7</p>
+                            </div>
+                            <div class="linear-gradient-poster"></div>
                         </div>
-                        <div class="linear-gradient-poster"></div>
-                    </div>
-                    <div class="poster-title">
-                        <p class="font-poster-title">Путеводная звезда</p>
+                        <div class="poster-title">
+                            <p class="font-poster-title poster-title-third">Путеводная звезда</p>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </a>
             <div class="right">
-                <img src="/assets/right.svg" alt="кнопка вправо" />
+                <button class="button-right"><img src="/assets/right_day_activ.svg" alt="кнопка вправо" /></button>
             </div>
         </div>
         <div class="search">
@@ -103,9 +114,9 @@
                 <img src="/assets/imageTop.png" alt="Изображение главного экрана">
                 <div class="linear-gradient-search"></div>
                 <div class="search-form">
-                    <form class="form-search">
+                    <form class="form-search" onsubmit="return false">
                         <div class="search-form-image"><img src="/assets/glass.svg" alt="Значок лупы" /></div>
-                        <input class="search-input font-search-input " type="text" name="input"
+                        <input class="search-input font-search-input " type="text" name="query"
                             placeholder="Что сегодня посмотреть?">
                         <button class="font-search-buttom search-form-buttom">Найти</button>
                     </form>
@@ -134,10 +145,11 @@
         <p class="font-footer">©️ 2024 Иван Каширин</p>
         <div class="social">
             <ul class="links">
-                <li><a href="https://t.me/"><img src="/assets/tg.svg" alt="Telegram" /></a></li>
-                <li><a href="https://vk.com/"><img src="/assets/vk.svg" alt="VK" /></a></li>
-                <li><a href="https://dzen.ru/"><img src="/assets/dzen.svg" alt="Дзен" /></a></li>
-                <li><a href="https://youtu.be/"><img src="/assets/youtube.svg" alt="YouTube" /></a></li>
+                <li class="social-telegram"><a href="https://t.me/"><img src="/assets/tg.svg" alt="Telegram" /></a></li>
+                <li class="social-vk"><a href="https://vk.com/"><img src="/assets/vk.svg" alt="VK" /></a></li>
+                <li class="social-dzen"><a href="https://dzen.ru/"><img src="/assets/dzen.svg" alt="Дзен" /></a></li>
+                <li class="social-youtube"><a href="https://youtu.be/"><img src="/assets/youtube.svg"
+                            alt="YouTube" /></a></li>
             </ul>
         </div>
     </footer>
