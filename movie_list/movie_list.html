@@ -13,8 +13,10 @@
         @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
     </style>
     <script src="/script/jquery-3.7.1.js"></script>
-    <script type="module" src="/script/common.js"></script>
-    <script type="module" src="/script/script_movie_list.js"></script>
+    <script src="/script/common.js"></script>
+    <script src="/script/script_movie_list.js"></script>
+
+
 </head>
 
 <body>
@@ -41,6 +43,20 @@
             </div>
         </nav>
     </header>
+    <template id="posterTemplate">
+            <div class="poster">
+                <div class="poster-image">
+                    <img src alt />
+                    <div class="poster-rating">
+                        <p class="font-poster-title"></p>
+                    </div>
+                    <div class="linear-gradient-poster"></div>
+                </div>
+                <div class="poster-title">
+                    <p class="font-poster-title"></p>
+                </div>
+            </div>
+    </template>
     <main>
         <div class="search">
             <div class="search-image">
@@ -59,13 +75,7 @@
         <div class="main">
             <div class="main-films-title">
                 <h1 class="font-main-films-title">Фильмы</h1>
-                <div class="main-films-count-list">
-                    <p class="font-main-films-count-list">1</p>
-                    <p class="font-main-films-count-list">2</p>
-                    <p class="font-main-films-count-list">3</p>
-                    <p class="font-main-films-count-list">4</p>
-                    <p class="font-main-films-count-list">5</p>
-                </div>
+                <ul id="main-films-count-list" class="main-films-count-list"></ul>
             </div>
             <div class="main-films">
                 <div class="main-search-parameters">
@@ -119,125 +129,9 @@
                 </div>
 
 
-                <div class="main-film-catalog ">
+                <div id="main-film-catalog" class="main-film-catalog">
                     <div class="left">
                         <img src="/assets/left_day.svg" alt="кнопка влево" />
-                    </div>
-                    <div class="poster poster-open">
-                        <div class="poster-image">
-                            <img src="/assets/film1.png" alt="Изображение фильма Проклятое королевство" />
-                            <div class="poster-rating">
-                                <p class="font-poster-title">9.8</p>
-                            </div>
-                            <div class="linear-gradient-poster"></div>
-                        </div>
-                        <div class="poster-title">
-                            <p class="font-poster-title">Проклятое королевство</p>
-                        </div>
-                    </div>
-
-                    <div class="poster poster-close">
-                        <div class="poster-image">
-                            <img src="/assets/film1.png" alt="Изображение фильма Проклятое королевство" />
-                            <div class="poster-rating">
-                                <p class="font-poster-title">9.8</p>
-                            </div>
-                            <div class="linear-gradient-poster"></div>
-                        </div>
-                        <div class="poster-title">
-                            <p class="font-poster-title">Проклятое королевство</p>
-                        </div>
-                    </div>
-
-                    <div class="poster poster-close">
-                        <div class="poster-image">
-                            <img src="/assets/film1.png" alt="Изображение фильма Проклятое королевство" />
-                            <div class="poster-rating">
-                                <p class="font-poster-title">9.8</p>
-                            </div>
-                            <div class="linear-gradient-poster"></div>
-                        </div>
-                        <div class="poster-title">
-                            <p class="font-poster-title">Проклятое королевство</p>
-                        </div>
-                    </div>
-
-                    <div class="poster poster-close">
-                        <div class="poster-image">
-                            <img src="/assets/film1.png" alt="Изображение фильма Проклятое королевство" />
-                            <div class="poster-rating">
-                                <p class="font-poster-title">9.8</p>
-                            </div>
-                            <div class="linear-gradient-poster"></div>
-                        </div>
-                        <div class="poster-title">
-                            <p class="font-poster-title">Проклятое королевство</p>
-                        </div>
-                    </div>
-
-                    <div class="poster poster-close">
-                        <div class="poster-image">
-                            <img src="/assets/film1.png" alt="Изображение фильма Проклятое королевство" />
-                            <div class="poster-rating">
-                                <p class="font-poster-title">9.8</p>
-                            </div>
-                            <div class="linear-gradient-poster"></div>
-                        </div>
-                        <div class="poster-title">
-                            <p class="font-poster-title">Проклятое королевство</p>
-                        </div>
-                    </div>
-
-                    <div class="poster poster-close">
-                        <div class="poster-image">
-                            <img src="/assets/film1.png" alt="Изображение фильма Проклятое королевство" />
-                            <div class="poster-rating">
-                                <p class="font-poster-title">9.8</p>
-                            </div>
-                            <div class="linear-gradient-poster"></div>
-                        </div>
-                        <div class="poster-title">
-                            <p class="font-poster-title">Проклятое королевство</p>
-                        </div>
-                    </div>
-
-                    <div class="poster poster-close">
-                        <div class="poster-image">
-                            <img src="/assets/film1.png" alt="Изображение фильма Проклятое королевство" />
-                            <div class="poster-rating">
-                                <p class="font-poster-title">9.8</p>
-                            </div>
-                            <div class="linear-gradient-poster"></div>
-                        </div>
-                        <div class="poster-title">
-                            <p class="font-poster-title">Проклятое королевство</p>
-                        </div>
-                    </div>
-
-                    <div class="poster poster-close">
-                        <div class="poster-image">
-                            <img src="/assets/film1.png" alt="Изображение фильма Проклятое королевство" />
-                            <div class="poster-rating">
-                                <p class="font-poster-title">9.8</p>
-                            </div>
-                            <div class="linear-gradient-poster"></div>
-                        </div>
-                        <div class="poster-title">
-                            <p class="font-poster-title">Проклятое королевство</p>
-                        </div>
-                    </div>
-
-                    <div class="poster poster-close">
-                        <div class="poster-image">
-                            <img src="/assets/film1.png" alt="Изображение фильма Проклятое королевство" />
-                            <div class="poster-rating">
-                                <p class="font-poster-title">9.8</p>
-                            </div>
-                            <div class="linear-gradient-poster"></div>
-                        </div>
-                        <div class="poster-title">
-                            <p class="font-poster-title">Проклятое королевство</p>
-                        </div>
                     </div>
 
                     <div class="right">
@@ -254,7 +148,8 @@
                 <li class="social-telegram"><a href="https://t.me/"><img src="/assets/tg.svg" alt="Telegram" /></a></li>
                 <li class="social-vk"><a href="https://vk.com/"><img src="/assets/vk.svg" alt="VK" /></a></li>
                 <li class="social-dzen"><a href="https://dzen.ru/"><img src="/assets/dzen.svg" alt="Дзен" /></a></li>
-                <li class="social-youtube"><a href="https://youtu.be/"><img src="/assets/youtube.svg" alt="YouTube" /></a></li>
+                <li class="social-youtube"><a href="https://youtu.be/"><img src="/assets/youtube.svg"
+                            alt="YouTube" /></a></li>
             </ul>
         </div>
     </footer>

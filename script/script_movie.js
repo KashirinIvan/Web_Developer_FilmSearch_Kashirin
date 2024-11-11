@@ -1,11 +1,16 @@
-var id = 1312838;
 var dataMovie;
 var token = "2R1MKR1-9EZ44ZB-PYJM41D-D39FVDX"
 $(function () {
-    /*request by movieid*/
-    /*poster movie https://api.kinopoisk.dev */
+    var movie_id = localStorage.getItem("movie_id");
+
+    if (movie_id !== null) {
+        console.log(movie_id)
+        localStorage.removeItem("movie_id");
+        localStorage.clear();
+    }
+
     $.ajax({
-        url: 'https://api.kinopoisk.dev/v1.4/movie/' + id,
+        url: 'https://api.kinopoisk.dev/v1.4/movie/' + movie_id,
         contentType: "application/json",
         dataType: 'json',
         beforeSend: function (jqXHR) {
@@ -18,10 +23,16 @@ $(function () {
         }
     });
 
+
     function dataPageLoad() {
         $('.movie-title h1').text(dataMovie.name);
         $("<img src='" + dataMovie.poster.url + "'>").replaceAll('.poster-image img');
         $('.poster-rating p').text(dataMovie.rating.kp.toFixed(1));
+        if (dataMovie.rating.kp.toFixed(1) < 8.5) {
+            $('.poster-rating').css("background-color", "#FFAF37")
+        } else {
+            $('.poster-rating').css("background-color", "#3BB33B")
+        }
         var genre = '';
         for (var i = 0; i < dataMovie.genres.length; i++) {
             genre += dataMovie.genres[i].name + " ";
@@ -37,17 +48,32 @@ $(function () {
         }
         for (var i = 0; i < length; i++) {
             if (dataMovie.persons[i].profession === "актеры") {
-                actor += dataMovie.persons[i].name + " ";
+                if (dataMovie.persons[i].name === null) {
+                } else {
+                    actor += dataMovie.persons[i].name + " ";
+                }
             }
         }
-        $('.actor-info').text(actor);
+        if (actor !== '') {
+            $('.actor-info').text(actor);
+        }
+        else {
+            $('.actor-info').text('---');
+        }
         var director = '';
         for (var i = 0; i < dataMovie.persons.length; i++) {
             if (dataMovie.persons[i].profession === "режиссеры") {
-                director += dataMovie.persons[i].name + " ";
+                if (dataMovie.persons[i].name === null) {
+                } else {
+                    director += dataMovie.persons[i].name + " ";
+                }
             }
         }
-        $('.directors-info').text(director);
+        if (director !== '') {
+            $('.directors-info').text(director);
+        } else {
+            $('.directors-info').text('---')
+        }
         if (dataMovie.premiere.world === null) {
             $('.release-info').text('---');
         } else {
@@ -103,6 +129,6 @@ $(function () {
         } else {
             $('.age-info').text(dataMovie.ageRating.toString(10) + "+")
         }
-        $("<iframe src="+ dataMovie.videos.trailers[0].url + "></iframe>").replaceAll('video iframe');   
+        $("<iframe src=" + dataMovie.videos.trailers[0].url + "></iframe>").replaceAll('iframe');
     }
 });

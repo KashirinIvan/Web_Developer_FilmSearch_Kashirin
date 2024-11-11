@@ -66,7 +66,7 @@ select {
         width: 100vw;
     }
 
-     .main-films-count-list {
+    .main-films-count-list {
         display: none;
     }
 
@@ -78,6 +78,7 @@ select {
         align-items: center;
         justify-content: space-around;
     }
+
     .main-films-title {
         width: 41.94vw;
         height: 4.97vh;
@@ -136,7 +137,7 @@ select {
         height: 188.7vh;
         margin: -27vh 0 0 1.3vw;
     }
-    
+
 
     .main-films {
         display: flex;
@@ -153,11 +154,16 @@ select {
         height: 2.69vh;
     }
 
+    .main-films-count-list li {
+        list-style: none;
+        text-decoration: none;
+    }
+
     .main-film-catalog {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-         width: 58.02vw;
+        width: 58.02vw;
         margin: 0 0 0 1.3vw;
     }
 
@@ -170,7 +176,9 @@ select {
         margin: 10.28vh 0 8.61vh 27.26vw;
 
     }
-    .left, .right{
+
+    .left,
+    .right {
         display: none;
     }
 
