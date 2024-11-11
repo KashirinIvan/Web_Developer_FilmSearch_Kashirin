@@ -11,13 +11,23 @@ select {
 .search-parameters {
     display: flex;
     flex-direction: column;
-    z-index: 100;
+    z-index: 2;
 }
 
 .main-search-parameters {
     display: flex;
     flex-direction: column;
 }
+.button-right {
+    border: none;
+    background-color: white;
+}
+
+.button-left {
+    border: none;
+    background-color: white;
+}
+
 
 @media (max-width: 360px) {
     .main {
@@ -78,6 +88,10 @@ select {
         flex-direction: row;
         align-items: center;
         justify-content: space-around;
+    }
+
+    .film-catalog {
+
     }
 
     .main-films-title {
@@ -159,8 +173,20 @@ select {
         list-style: none;
         text-decoration: none;
     }
+    li.active {
+        font-weight:bolder;
+ 
+    }
 
     .main-film-catalog {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 58.02vw;
+        margin: 0 0 0 1.3vw;
+    }
+
+    .film-catalog {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;

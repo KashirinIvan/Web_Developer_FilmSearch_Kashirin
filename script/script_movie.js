@@ -1,4 +1,5 @@
 var dataMovie;
+var dataJSON;
 var token = "2R1MKR1-9EZ44ZB-PYJM41D-D39FVDX"
 $(function () {
     var movie_id = localStorage.getItem("movie_id");
@@ -23,6 +24,27 @@ $(function () {
         }
     });
 
+    /*button search movie title https://api.kinopoisk.dev  */
+    $('.search-form-buttom').on("click", function () {
+        $.ajax({
+            url: 'https://api.kinopoisk.dev/v1.4/movie/search?page=1&limit=45&',
+            contentType: "application/json",
+            dataType: 'json',
+            data: $('input').serialize(),
+            beforeSend: function (jqXHR) {
+                jqXHR.setRequestHeader("Accept", "application/json");
+                jqXHR.setRequestHeader("X-Api-Key", token);
+            },
+            success: function (data) {
+                dataJSON = data
+                localStorage.clear()
+                localStorage.setItem("dataSearch", JSON.stringify(dataJSON.docs));
+                document.location.href = './movie_list/movie_list.html';
+            }
+
+        });
+
+    });
 
     function dataPageLoad() {
         $('.movie-title h1').text(dataMovie.name);
@@ -129,6 +151,12 @@ $(function () {
         } else {
             $('.age-info').text(dataMovie.ageRating.toString(10) + "+")
         }
-        $("<iframe src=" + dataMovie.videos.trailers[0].url + "></iframe>").replaceAll('iframe');
+        if (dataMovie.videos.trailers[0].url === null) {
+            $("<p>Ссылки на трейлер не найдено</p>").replaceAll('iframe');
+        } else {
+            $("<iframe src=" + dataMovie.videos.trailers[0].url + "></iframe>").replaceAll('iframe');
+        }
+
+
     }
 });
