@@ -202,6 +202,11 @@ $(function () {
         poster.querySelector('.poster-image img').setAttribute('src', note.poster.url);
         poster.querySelector('.poster-title p').innerText = note.name;
         poster.querySelector('.poster-rating p').innerText = note.rating.kp.toFixed(1);
+        if (note.rating.kp.toFixed(1) < 8.5) {
+            $('.poster-rating').css("background-color", "#FFAF37")
+        } else {
+            $('.poster-rating').css("background-color", "#3BB33B")
+        }
         divPoster.appendChild(poster)
     }
 });
