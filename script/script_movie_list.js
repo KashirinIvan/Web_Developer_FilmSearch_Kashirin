@@ -2,149 +2,121 @@ var token = "2R1MKR1-9EZ44ZB-PYJM41D-D39FVDX"
 var dataMovieList = [];
 var index = 0;
 $(function () {
-    dataMovieList = [{
-        name: '1',
-        rating: {
-            kp: 4.55
-        },
-        poster: {
-            url: "../../assets/film1.png"
-        }
-    },
-    {
-        name: '2',
-        rating: {
-            kp: 3.55
-        },
-        poster: {
-            url: "../../assets/film1.png"
-        }
-    },
-    {
-        name: '3',
-        rating: {
-            kp: 6.55
-        },
-        poster: {
-            url: "../../assets/film1.png"
-        }
-    },
-    {
-        name: '4',
-        rating: {
-            kp: 7.55
-        },
-        poster: {
-            url: "../../assets/film1.png"
-        }
-    },
-    {
-        name: '5',
-        rating: {
-            kp: 1.55
-        },
-        poster: {
-            url: "../../assets/film1.png"
-        }
-    },
-    {
-        name: '6',
-        rating: {
-            kp: 2.55
-        },
-        poster: {
-            url: "../../assets/film1.png"
-        }
-    },
-    {
-        name: '7',
-        rating: {
-            kp: 9.55
-        },
-        poster: {
-            url: "../../assets/film1.png"
-        }
-    },
-    {
-        name: '8',
-        rating: {
-            kp: 5.55
-        },
-        poster: {
-            url: "../../assets/film1.png"
-        }
-    },
-    {
-        name: '9',
-        rating: {
-            kp: 9.55
-        },
-        poster: {
-            url: "../../assets/film1.png"
-        }
-    },
-    {
-        name: '10',
-        rating: {
-            kp: 9.55
-        },
-        poster: {
-            url: "../../assets/film1.png"
-        }
-    },]
-    /*    dataMovieList = JSON.parse(localStorage.getItem("dataSearch"));
-        if (dataMovieList !== null) {
-            localStorage.clear();
-            updateMovieList()
-        } else {
-            dataMovieList = [];
-            for (let i = 0; i < 9; i++) {
-                $.ajax({
-                    url: 'https://api.kinopoisk.dev/v1.4/movie/random?notNullFields=name&notNullFields=rating.kp&notNullFields=poster.url&type=movie&rating.kp=8-10',
-                    contentType: "application/json",
-                    dataType: 'json',
-                    beforeSend: function (jqXHR) {
-                        jqXHR.setRequestHeader("Accept", "application/json");
-                        jqXHR.setRequestHeader("X-Api-Key", token);
-                    },
-                    success: function (data) {
-                        dataMovieList.push(data)
-                        if (dataMovieList.length === 9) {
-                        index=0;
-                            updateMovieList(index)
-                        }
-                    }
-                });
-            }
-            console.log(dataMovieList)
-        }
-    */
-        $('.search-form-buttom').on("click", function () {
+    dataMovieList = JSON.parse(localStorage.getItem("dataSearch"));
+    if (dataMovieList !== null) {
+        localStorage.clear();
+        updateMovieList(index, dataMovieList.filter(selectedFilter))
+    } else {
+        dataMovieList = [];
+        for (let i = 0; i < 3; i++) {
             $.ajax({
-                url: 'https://api.kinopoisk.dev/v1.4/movie/search?page=1&limit=45&',
+                url: 'https://api.kinopoisk.dev/v1.4/movie/random?notNullFields=name&notNullFields=rating.kp&notNullFields=poster.url&type=movie&rating.kp=8-10',
                 contentType: "application/json",
                 dataType: 'json',
-                data: $('input').serialize(),
                 beforeSend: function (jqXHR) {
                     jqXHR.setRequestHeader("Accept", "application/json");
                     jqXHR.setRequestHeader("X-Api-Key", token);
                 },
                 success: function (data) {
-                    dataMovieList = data
-                    index=0;
-                    updateMovieList(index)
+                    dataMovieList.push(data)
+                    console.data
+                    if (dataMovieList.length === 3) {
+                        index = 0;
+                        updateMovieList(index, dataMovieList.filter(selectedFilter))
+
+                    }
                 }
             });
-    
-        });
+        }
+    }
 
-    updateMovieList(index)
+    $('.search-form-buttom').on("click", function () {
+        $.ajax({
+            url: 'https://api.kinopoisk.dev/v1.4/movie/search?page=1&limit=45&',
+            contentType: "application/json",
+            dataType: 'json',
+            data: $('input').serialize(),
+            beforeSend: function (jqXHR) {
+                jqXHR.setRequestHeader("Accept", "application/json");
+                jqXHR.setRequestHeader("X-Api-Key", token);
+            },
+            success: function (data) {
+                dataMovieList = data
+                index = 0;
+                updateMovieList(index, dataMovieList.filter(selectedFilter))
+            }
+        });
+    });
+    /*функция сортировки по выбранным параметрам */
+    function selectedFilter(movie) {
+        let genre = document.querySelector("#genreId")
+        let rating = document.querySelector("#ratingId")
+        let country = document.querySelector("#countryId")
+        let year = document.querySelector("#yearId")
+        if ((movie.genres[0] === genre.value) || (genre.value === 'allgenre')) {
+            if ((movie.countries[0].name === country.value) || (country.value === 'allcountry')) {
+                if ((movie.year == year.value) || (year.value === 'allyear')) {
+                    if (rating.value === 'allrating') {
+                        return movie;
+                    } else {
+                        switch (rating.value) {
+                            case 'more-9':
+                                if (movie.rating.kp.toFixed(1) >= 9) {
+                                    return movie;
+                                }
+                                break;
+                            case '8-9':
+                                if (movie.rating.kp.toFixed(1) >= 8 && movie.rating.kp.toFixed(1) <= 9) {
+                                    return movie;
+                                }
+                                break;
+                            case '7-8':
+                                if (movie.rating.kp.toFixed(1) >= 7 && movie.rating.kp.toFixed(1) <= 8) {
+                                    return movie;
+                                }
+                                break;
+                            case 'less-7':
+                                if (movie.rating.kp.toFixed(1) <= 7) {
+                                    return movie;
+                                }
+                                break;
+
+                            default: break;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    /*сортировка по условиям выборки*/
+    document.querySelector("#genreId").addEventListener('change', function (e) {
+        index = 0
+        updateMovieList(index, dataMovieList.filter(selectedFilter))
+    })
+    document.querySelector("#ratingId").addEventListener('change', function (e) {
+        index = 0
+        updateMovieList(index, dataMovieList.filter(selectedFilter))
+
+    })
+    document.querySelector("#countryId").addEventListener('change', function (e) {
+        index = 0
+        updateMovieList(index, dataMovieList.filter(selectedFilter))
+
+    })
+    document.querySelector("#yearId").addEventListener('change', function (e) {
+        index = 0
+        updateMovieList(index, dataMovieList.filter(selectedFilter))
+
+    })
+
+
+    //updateMovieList(index, dataMovieList.filter(selectedFilter))
 
     var mediaQueryMin = window.matchMedia('(min-width: 361px)')
     function handleTabletChangeMin(e) {
         if (e.matches) {
-            console.log("min-width 361")
-            updateMovieList(index)
+            index = 0
+            updateMovieList(index, dataMovieList.filter(selectedFilter))
         }
     }
     mediaQueryMin.addListener(handleTabletChangeMin)
@@ -153,18 +125,19 @@ $(function () {
     var mediaQueryMax = window.matchMedia('(max-width: 360px)')
     function handleTabletChangeMax(e) {
         if (e.matches) {
-            console.log("max-width 360")
-            updateMovieList(index)
+            index = 0
+            updateMovieList(index, dataMovieList.filter(selectedFilter))
         }
     }
     mediaQueryMax.addListener(handleTabletChangeMax)
     handleTabletChangeMax(mediaQueryMax)
 
-    function updateMovieList(index) {
+    function updateMovieList(index, dataMovieList) {
         let movieId = 0;
         let notesOnPage = 0;
         let catalog = document.querySelector('#film-catalog');
         let pagination = document.querySelector('#main-films-count-list');
+        catalog.innerHTML = ''
         pagination.innerHTML = ''
         var items = [];
 
@@ -172,12 +145,11 @@ $(function () {
         mediaQueryMin = window.matchMedia('(min-width: 361px)')
         if (mediaQueryMin.matches) {
             notesOnPage = 9;
-            console.log("notesOnPage=" + notesOnPage)
         }
         mediaQueryMax = window.matchMedia('(max-width: 360px)')
         if (mediaQueryMax.matches) {
             notesOnPage = 1;
-            console.log("notesOnPage=" + notesOnPage)
+            buttonRightActiv()
         }
         let countOfItems = Math.ceil(dataMovieList.length / notesOnPage);
 
@@ -192,7 +164,6 @@ $(function () {
             return 0;
         })
         dataMovieList.reverse()
-
         for (let i = 1; i <= countOfItems; i++) {
             let li = document.createElement('li');
             li.innerHTML = i;
@@ -253,55 +224,64 @@ $(function () {
     /* кнопка переключениия каталога фильнов влево в мобильной версии */
     $('.button-left').on("click", function () {
         if (index > 0) {
-            $('.button-right').prop('disabled', false);
-            $('.button-right').addClass("activ");
-            if (($('.titleThemeToggle').text() === 'Темная тема')) {
-                $("<img src='/assets/right_day_activ.svg'>").replaceAll('.right img')
-            }
-            else {
-                $("<img src='/assets/right_night_activ.svg'>").replaceAll('.right img')
-            }
-            index--
-            updateMovieList(index)
-            console.log("index=" + index)
+            buttonRightActiv();
+            index--;
+            updateMovieList(index, dataMovieList.filter(selectedFilter));
         }
         else {
-            $('.button-left').prop('disabled', true);
-            $('.button-left').removeClass("activ");
-            if (($('.titleThemeToggle').text() === 'Темная тема')) {
-                $("<img src='/assets/left_day.svg'>").replaceAll('.left img')
-            }
-            else {
-                $("<img src='/assets/left_night.svg'>").replaceAll('.left img')
-            }
+            buttonLeftNoActiv();
         }
     });
     /* кнопка переключениия каталога фильнов вправо в мобильной версии */
     $('.button-right').on("click", function () {
-        if (index < dataMovieList.length) {
-            $('.button-left').prop('disabled', false);
-            $('.button-left').addClass("activ");
-            if (($('.titleThemeToggle').text() === 'Темная тема')) {
-                $("<img src='/assets/left_day_activ.svg'>").replaceAll('.left img')
-            }
-            else {
-                $("<img src='/assets/left_night_activ.svg'>").replaceAll('.left img')
-            }
-            index++
-            updateMovieList(index)
-            console.log("index=" + index)
+        if (index < dataMovieList.filter(selectedFilter).length - 1) {
+            buttonLeftActiv();
+            index++;
+            updateMovieList(index, dataMovieList.filter(selectedFilter));
         }
         else {
-            $('.button-right').prop('disabled', true);
-            $('.button-right').removeClass("activ");
-            if ($('.titleThemeToggle').text() === 'Темная тема') {
-                $("<img src='/assets/right_day.svg'>").replaceAll('.right img')
-            }
-            else {
-                $("<img src='/assets/right_night.svg'>").replaceAll('.right img')
-            }
+            buttonRightNoActiv();
         }
     });
-    
+    function buttonLeftActiv() {
+        $('.button-left').prop('disabled', false);
+        $('.button-left').addClass("activ");
+        if (($('.titleThemeToggle').text() === 'Темная тема')) {
+            $("<img src='/assets/left_day_activ.svg'>").replaceAll('.left img');
+        }
+        else {
+            $("<img src='/assets/left_night_activ.svg'>").replaceAll('.left img');
+        }
+    }
+    function buttonLeftNoActiv() {
+        $('.button-left').prop('disabled', true);
+        $('.button-left').removeClass("activ");
+        if (($('.titleThemeToggle').text() === 'Темная тема')) {
+            $("<img src='/assets/left_day.svg'>").replaceAll('.left img');
+        }
+        else {
+            $("<img src='/assets/left_night.svg'>").replaceAll('.left img');
+        }
+    }
+    function buttonRightActiv() {
+        $('.button-right').prop('disabled', false);
+        $('.button-right').addClass("activ");
+        if (($('.titleThemeToggle').text() === 'Темная тема')) {
+            $("<img src='/assets/right_day_activ.svg'>").replaceAll('.right img');
+        }
+        else {
+            $("<img src='/assets/right_night_activ.svg'>").replaceAll('.right img');
+        }
+    }
+    function buttonRightNoActiv() {
+        $('.button-right').prop('disabled', true);
+        $('.button-right').removeClass("activ");
+        if ($('.titleThemeToggle').text() === 'Темная тема') {
+            $("<img src='/assets/right_day.svg'>").replaceAll('.right img');
+        }
+        else {
+            $("<img src='/assets/right_night.svg'>").replaceAll('.right img');
+        }
+    }
 });
 

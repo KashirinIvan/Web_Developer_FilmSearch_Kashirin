@@ -83,10 +83,11 @@
                             <form id="gerdeFilter">
                                 <label for="genreId" class="font-search-parameters">Жанр</label>
                                 <select id="genreId" name="genre" form="gerdeFilter">
-                                    <option class="font-select-option" value="allgenre">Все жанры</option>
+                                    <option class="font-select-option" value="allgenre" selected>Все жанры</option>
                                     <option class="font-select-option" value="action">Боевик</option>
                                     <option class="font-select-option" value="comedy">Комедия</option>
                                     <option class="font-select-option" value="drama">Драма</option>
+                                    <option class="font-select-option" value="komediya">Комедия</option>
                                 </select>
                             </form>
                         </div>
@@ -94,7 +95,7 @@
                             <form id="ratingFilter">
                                 <label class="font-search-parameters">Рейтинг</label>
                                 <select id="ratingId" name="rating" for="ratingFilter">
-                                    <option class="font-select-option" value="search-rating">Выбрать рейтинг</option>
+                                    <option class="font-select-option" value="allrating" selected>Выбрать рейтинг</option>
                                     <option class="font-select-option" value="more-9">Более 9.0</option>
                                     <option class="font-select-option" value="8-9">8.0-9.0</option>
                                     <option class="font-select-option" value="7-8">7.0-8.0</option>
@@ -106,10 +107,10 @@
                             <form id="countryFilter">
                                 <label for="countryId" class="font-search-parameters">Страна</label>
                                 <select id="countryId" name="country" form="countryFilter">
-                                    <option class="font-select-option" value="allcountry">Все страны</option>
-                                    <option class="font-select-option" value="countryFirst">Первая страна</option>
-                                    <option class="font-select-option" value="countrySecond">Вторая страна</option>
-                                    <option class="font-select-option" value="countryThree">Третья страна</option>
+                                    <option class="font-select-option" value="allcountry" selected>Все страны</option>
+                                    <option class="font-select-option" value="Россия">Россия</option>
+                                    <option class="font-select-option" value="США">США</option>
+                                    <option class="font-select-option" value="Великобритания">Великобритания</option>
                                 </select>
                             </form>
                         </div>
@@ -117,10 +118,10 @@
                             <form id="yearFilter">
                                 <label for="yearId" class="font-search-parameters">Год выпуска</label>
                                 <select id="yearId" name="year" form="yearFilter">
-                                    <option class="font-select-option" value="allyear">Все годы</option>
-                                    <option class="font-select-option" value="yearFirst">2024</option>
-                                    <option class="font-select-option" value="yearSecond">2023</option>
-                                    <option class="font-select-option" value="yearThree">2022</option>
+                                    <option class="font-select-option" value="allyear" selected>Все годы</option>
+                                    <option class="font-select-option" value="2024">2024</option>
+                                    <option class="font-select-option" value="2023">2023</option>
+                                    <option class="font-select-option" value="2022">2022</option>
                                 </select>
                             </form>
                         </div>
@@ -132,7 +133,8 @@
                     </div>
                     <div id="film-catalog" class="film-catalog"></div>
                     <div class="right">
-                        <button class="button-right"><img src="/assets/right_day_activ.svg" alt="кнопка вправо" /></button>
+                        <button class="button-right"><img src="/assets/right_day_activ.svg"
+                                alt="кнопка вправо" /></button>
                     </div>
                 </div>
 

@@ -39,13 +39,13 @@ $(function () {
                 dataJSON = data
                 localStorage.clear()
                 localStorage.setItem("dataSearch", JSON.stringify(dataJSON.docs));
-                document.location.href = './movie_list/movie_list.html';
+                document.location.href = '../../movie_list/movie_list.html';
             }
 
         });
 
     });
-
+/*Функция обновления данных на странице */
     function dataPageLoad() {
         $('.movie-title h1').text(dataMovie.name);
         $("<img src='" + dataMovie.poster.url + "'>").replaceAll('.poster-image img');
@@ -63,7 +63,7 @@ $(function () {
         $('.country-info').text(dataMovie.countries[0].name);
         var actor = '';
         var length = 0;
-        if (dataMovie.persons.length > 3) {
+        if (dataMovie.persons.length > 5) {
             length = 5
         } else {
             length = dataMovie.persons.length
@@ -151,12 +151,16 @@ $(function () {
         } else {
             $('.age-info').text(dataMovie.ageRating.toString(10) + "+")
         }
-        if (dataMovie.videos.trailers[0].url === null) {
-            $("<p>Ссылки на трейлер не найдено</p>").replaceAll('iframe');
+        if (dataMovie.videos === undefined) {
+            $("<p>Ссылки на трейлер не найдена</p>").replaceAll('iframe');
         } else {
             $("<iframe src=" + dataMovie.videos.trailers[0].url + "></iframe>").replaceAll('iframe');
         }
-
-
+        if (dataMovie.stills === undefined) {
+            $('.stills-film').css("display", "none");
+        }
+        if (dataMovie.reviews === undefined) {
+            $('.reviews-film').css("display", "none")
+        }
     }
 });
