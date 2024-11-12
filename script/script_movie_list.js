@@ -43,7 +43,7 @@ $(function () {
             success: function (data) {
                 dataMovieList = data
                 index = 0;
-                updateMovieList(index, dataMovieList.filter(selectedFilter))
+                updateMovieList(index, dataMovieList.docs.filter(selectedFilter))
             }
         });
     });

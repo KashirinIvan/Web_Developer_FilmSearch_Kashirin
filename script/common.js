@@ -20,6 +20,9 @@ $(function () {
             }
             $('.button-right').css("background-color", "black")
             $('.button-left').css("background-color", "black")
+            $('#menu-container').css("background-color", "black").css("color","white")
+            $('.themeToggle').css("background-color", "black")
+            $('input#menu-hamburger~label').css("background-color", "black").css("color","white")
         }
         else {
             $('.titleThemeToggle').text('Темная тема')
@@ -40,6 +43,9 @@ $(function () {
             }
             $('.button-right').css("background-color", "white")
             $('.button-left').css("background-color", "white")
+            $('#menu-container').css("background-color", "white").css("color","black")
+            $('.themeToggle').css("background-color", "white")
+            $('input#menu-hamburger~label').css("background-color", "white").css("color","black")
         }
     });
     /*button search hover*/

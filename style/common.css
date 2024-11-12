@@ -14,6 +14,7 @@ body {
     height: 2.87vh;
     border-radius: 1.85vh;
     padding: 0;
+    background-color: white;
 }
 
 /* seartch*/
@@ -266,6 +267,7 @@ nav a {
         height: 2.05vh;
     }
     input#menu-hamburger~label {
+        background-color: white;
         display: block;
         color: 010101;
         font-size: 2.5em;
@@ -288,7 +290,7 @@ nav a {
     }
 
     #menu-container {
-        
+        background-color: white;
         position: absolute;
         top: 7vh;
         right: 0;
@@ -326,7 +328,7 @@ nav a {
     }
 
     .search-input {
-        width: 46.94vw;
+        width: 76.94vw;
         height: 1.85vh;
         margin: 2.03vh 0 1.97vh 1.93vw;
     }

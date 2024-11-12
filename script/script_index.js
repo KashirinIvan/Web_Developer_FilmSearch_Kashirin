@@ -5,7 +5,7 @@ var token = "2R1MKR1-9EZ44ZB-PYJM41D-D39FVDX"
 var movieId;
 $(function () {
     /*poster movie https://api.kinopoisk.dev */
-    /*    $.ajax({
+        $.ajax({
           url: 'https://api.kinopoisk.dev/v1.4/movie?page=1&limit=6&selectFields=id&selectFields=name&selectFields=rating&selectFields=poster&notNullFields=id&notNullFields=name&notNullFields=rating.kp&notNullFields=poster.url&type=movie',
           contentType: "application/json",
             dataType: 'json',

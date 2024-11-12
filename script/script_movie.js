@@ -1,6 +1,7 @@
 var dataMovie;
 var dataJSON;
 var token = "2R1MKR1-9EZ44ZB-PYJM41D-D39FVDX"
+
 $(function () {
     var movie_id = localStorage.getItem("movie_id");
 
@@ -45,7 +46,7 @@ $(function () {
         });
 
     });
-/*Функция обновления данных на странице */
+    /*Функция обновления данных на странице */
     function dataPageLoad() {
         $('.movie-title h1').text(dataMovie.name);
         $("<img src='" + dataMovie.poster.url + "'>").replaceAll('.poster-image img');
@@ -99,52 +100,7 @@ $(function () {
         if (dataMovie.premiere.world === null) {
             $('.release-info').text('---');
         } else {
-            var millisecund = Date.parse(dataMovie.premiere.world);
-            var date = new Date(millisecund)
-            var dateString = '';
-            dateString += date.getDate() + " ";
-            var month = '';
-            switch (date.getMonth()) {
-                case 0:
-                    month = 'января '
-                    break;
-                case 1:
-                    month = 'февраля '
-                    break;
-                case 2:
-                    month = 'марта '
-                    break;
-                case 3:
-                    month = 'апреля '
-                    break;
-                case 4:
-                    month = 'мая '
-                    break;
-                case 5:
-                    month = 'июня '
-                    break;
-                case 6:
-                    month = 'июля '
-                    break;
-                case 7:
-                    month = 'августа '
-                    break;
-                case 8:
-                    month = 'сентября '
-                    break;
-                case 9:
-                    month = 'октября '
-                    break;
-                case 10:
-                    month = 'ноября '
-                    break;
-                case 11:
-                    month = 'декабря '
-                    break;
-                default: break;
-            }
-            dateString += month + date.getFullYear();
-            $('.release-info').text(dateString);
+            $('.release-info').text(DataFilm(dataMovie.premiere.world));
         }
         if (dataMovie.ageRating === null) {
             $('.age-info').text('---')
@@ -163,4 +119,55 @@ $(function () {
             $('.reviews-film').css("display", "none")
         }
     }
+
 });
+/*функция для преобразования даты релиза фильма */
+function DataFilm(data) {
+    var millisecund = Date.parse(data);
+    var date = new Date(millisecund)
+    var dateString = '';
+    dateString += date.getDate() + " ";
+    var month = '';
+    switch (date.getMonth()) {
+        case 0:
+            month = 'января '
+            break;
+        case 1:
+            month = 'февраля '
+            break;
+        case 2:
+            month = 'марта '
+            break;
+        case 3:
+            month = 'апреля '
+            break;
+        case 4:
+            month = 'мая '
+            break;
+        case 5:
+            month = 'июня '
+            break;
+        case 6:
+            month = 'июля '
+            break;
+        case 7:
+            month = 'августа '
+            break;
+        case 8:
+            month = 'сентября '
+            break;
+        case 9:
+            month = 'октября '
+            break;
+        case 10:
+            month = 'ноября '
+            break;
+        case 11:
+            month = 'декабря '
+            break;
+        default: break;
+    }
+    return dateString += month + date.getFullYear();
+}
+
+module.exports = DataFilm;
