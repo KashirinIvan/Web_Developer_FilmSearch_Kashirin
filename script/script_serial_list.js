@@ -3,7 +3,7 @@ var dataMovieList = [];
 var index = 0;
 $(function () {
     dataMovieList = [];
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < 9; i++) {
         $.ajax({
             url: 'https://api.kinopoisk.dev/v1.4/movie/random?notNullFields=name&notNullFields=rating.kp&notNullFields=poster.url&type=tv-series&rating.kp=8-10',
             contentType: "application/json",
@@ -14,7 +14,7 @@ $(function () {
             },
             success: function (data) {
                 dataMovieList.push(data)
-                if (dataMovieList.length === 3) {
+                if (dataMovieList.length === 9) {
                     index = 0;
                     updateMovieList(index, dataMovieList.filter(selectedFilter))
 
